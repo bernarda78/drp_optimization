@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Partial HSC PDR2 at FrDF</title>
+</head>
+
+<body>
+	<h1>Execution of partial HSC PDR2 at the French Data Facility</h1>
+	<p>
+		The figures below summarize selected metrics about pipetask execution,
+		observed when executing Rubin Observatory HSC PDR2 Reprocessing and Operations Rehearsal for DRP at the French data facility, using v27. The execution campaign was performed in September 2024 (?).
+		
+	</p>
+	<p>
+		You can click on each image to display an interactive plot.
+	</p>
+	
+	<h1>Per step overview</h1>
+	<a href="html/elapsed-per-step.html"><img src="images/elapsed-per-step.png"></a>
+	<a href="html/peak-rss-per-step.html"><img src="images/peak-rss-per-step.png"></a>
+	<a href="html/quanta-per-step.html"><img src="images/quanta-per-step.png"></a>
+	<a href="html/cpu-efficiency-per-step.html"><img src="images/cpu-efficiency-per-step.png"></a>
+
+	<h1>Execution time per pipetask</h1>
+	<a href="html/elapsed-cpu-per-pipetask.html"><img src="images/elapsed-cpu-per-pipetask.png"></a>
+	<a href="html/cpu-efficiency-per-pipetask.html"><img src="images/cpu-efficiency-per-pipetask.png"></a>
+
+	<h1>Memory usage per pipetask</h1>
+	<a href="html/memory-consumption-per-pipetask.html"><img src="images/memory-consumption-per-pipetask.png"></a>
+    <a href="html/memory-by-compute-intensive-pipetasks.html"><img src="images/memory-by-compute-intensive-pipetasks.png"></a>
+
+	<h2>Memory usage versus execution time, grouped by pipetasks</h2>
+	<a href="html/memory-vs-runtime-top10.html"><img src="images/memory-vs-runtime-top10.png"></a>
+	<a href="html/memory-vs-runtime-top20.html"><img src="images/memory-vs-runtime-top20.png"></a>
+	<a href="html/memory-vs-runtime-top30.html"><img src="images/memory-vs-runtime-top30.png"></a>
+	<a href="html/memory-vs-runtime-top41.html"><img src="images/memory-vs-runtime-top41.png"></a>
+
+	<h2>Distribution of memory usage per pipetask</h2>
+	<p>The figures below present the distribution of memory used by the most CPU time-intensive pipetasks pipetasks. 
+		The figures are shown in alphabetical order by pipetask name.
+	</p>
+	{% for figure in figures %}
+		<a href="html/{{ figure }}.html"><img src="images/{{ figure }}.png" width="640" height="400"></a>
+	{% endfor %}
+	
+</body>
+</html>
