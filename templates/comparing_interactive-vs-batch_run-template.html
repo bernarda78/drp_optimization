@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Performance analysis between interactive- and batch-run</title>
+</head>
+
+<body>
+	<p>
+    The figures below highlight the performance discrepancies between different run.
+
+	The references metrics are from Rubin Observatory HSC PDR2 Reprocessing and Operations Rehearsal for DRP at the French data facility, using v27.
+
+	You can click on each image to display an interactive plot.
+	</p>
+
+    <h1>Performance analysis between interactive- and batch-run</h1>
+
+    We observe a difference in performance with differents execution options, on single `patch` and multiples `band`s.
+
+    <pre>
+    {{explanation_kind | replace('\n', '<br>')}}
+    </pre>
+
+    <a href="html/memory-forcedPhotCoadd-tract9461-patch60_vs_stack-version.html"><img src="images/memory-forcedPhotCoadd-tract9461-patch60_vs_stack-version.png"></a>
+    <a href="html/run_time-forcedPhotCoadd-tract9461-patch60_vs_stack-version.html"><img src="images/run_time-forcedPhotCoadd-tract9461-patch60_vs_stack-version.png"></a>
+
+    <h1>Summary</h1>
+    For everything below, we compare `w_2024_47/meas_base_modified_noopt` (optimized version) to `quentin_full_run_v27?` (base version).
+
+    <pre>
+    {{summary | replace('\n', '<br>')}}
+    </pre>
+
+	<h1>Execution time per pipetask</h1>
+    <a href="html/memory-vs-runtime-diff{{taskToCompare}}.html"><img src="images/memory-vs-runtime-diff{{taskToCompare}}.png"></a>
+
+	<h1>Memory usage per pipetask</h1>
+    <a href="html/memory-stats.html"><img src="images/memory-stats.png"></a>
+
+	<h2>Memory usage versus execution time</h2>
+    <a href="html/memory-vs-runtime-{{taskToCompare}}.html"><img src="images/memory-vs-runtime-{{taskToCompare}}.png"></a>
+
+	<h2>Distribution of memory usage per pipetask</h2>
+    <a href="html/memory-distribution-{{taskToCompare}}.html"><img src="images/memory-distribution-{{taskToCompare}}.png" width="640" height="400"></a>
+    <a href="html/memory-distribution-{{taskToCompare}}_opti.html"><img src="images/memory-distribution-{{taskToCompare}}_opti.png" width="640" height="400"></a>
+	
+</body>
+</html>
